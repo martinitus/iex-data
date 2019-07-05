@@ -1,0 +1,3 @@
+# requirements are defined in setup.py the below dot serves as a reference to that list. See:
+# https://stackoverflow.com/questions/14399534/reference-requirements-txt-for-the-install-requires-kwarg-in-setuptools-setup-py
+.

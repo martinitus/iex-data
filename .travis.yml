@@ -1,0 +1,20 @@
+language: python
+dist: xenial
+cache: pip
+python:
+- '3.7'
+- nightly
+install:
+- pip install -r requirements.txt
+script:
+- python -m unittest discover
+- python setup.py bdist_wheel
+deploy:
+  distributions: bdist_wheel
+  on:
+    tags: true
+  provider: pypi
+  skip_existing: true
+  user: MartiNito
+  password:
+    secure: Lm6qmyWjYvHky8DCL1t17trsz8mywHrQH5YhUVWs+AUaPxo4PjyGypxLnpb5iaLJU+NScUzJlglHZvDBei+k9Pz+yQS3cEPBVQC3P6v8CgCNstOxVCPPfFJJbquVHG6qUY7VvqtamXXSACmWQ8CY8P/0PBC38acxf4lqhHDELuiHiMQsPV4kNjPDUoYtYQQm0tLrVo7rHpG3mxyjEyto1KFqXcnXL5VBBYXl97iRjJPgDQXpWn2VaWRAHbPcJVKbCigTQpx9tLVieF0xqKBONb7+GMIh8rlfA4M00TTQuFPyoqk4eTABTqLNEpbILrwo5oBxpec0d0+qJnIlIRbm+gzl915OM7ehjGDUpUWSh3nklplqFgF9XaWMBitoj3g7XDZapxSGlUg7AxwYD79M6hwWZOhC0kj2Uc6ALS8pFKK7qTzwL4H+shXuKAO7Le/Bgk6yC1SSUaTQfl0gGsyX55qa52c5JjGC9Et4yU44hL/FJImK48isakVtWdbj+otuT6MLDOGq+sakFv5zv3+yhKacoUwKUMDE/6NWg/lg1/jOkSn+zVNBXhjW4X8x294QrBU+e94n2717i3jnNh6HyMzILK6ZvqdRcnlKlc30eSPF6/Pa0bQImmy3HyYv9aIKt8zCqwF8FgQcc5XG8166STNPiHvDEPvzCLorChqIHzk=
